@@ -30,4 +30,17 @@ int main()
         outfile << baris << endl;
     }
 
-    
+    // Menutup file setelah penulisan selesai
+    outfile.close();
+
+    // Membuka file dalam mode membaca
+    ifstream infile;
+    // Menunjuk ke sebuah nama file
+    infile.open("contohfile.txt");
+
+    cout << endl << ">= Membuka dan membaca file" << endl;
+
+    // Kondisi jika file ada
+    if (infile.is_open()) 
+    {
+        
