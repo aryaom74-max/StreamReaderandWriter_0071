@@ -14,4 +14,16 @@ int main()
         
         cout << "Pernyataan tidak akan ditampilkan" << endl;
     }
-    
+    // Kondisi jika throw yang bertipe data integer
+    catch (int a) 
+    {
+        cout << "Pengecualian akan di eksekusi (Tipe: Integer)" << endl;
+    }
+    // Kondisi jika throw bertipe data selain integer
+    catch (...) 
+    {
+        cout << "default pengecualian diekssekusi" << endl;
+    }
+
+    return 0;
+}
