@@ -65,4 +65,15 @@ public:
         return daftarBarang;
     }
 
+    // Fungsi Pembantu: Menyimpan kembali seluruh data Vector ke file gudang
+    void simpanDataGudang(const vector<Barang>& daftarBarang) {
+        ofstream fileOut(namaFileGudang, ios::trunc); // Overwrite file lama
+        if (fileOut.is_open()) {
+            for (const auto& b : daftarBarang) {
+                fileOut << b.id << "\n" << b.nama << "\n" << b.harga << "\n";
+            }
+            fileOut.close();
+        }
+    }
+
     
