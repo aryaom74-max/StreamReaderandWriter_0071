@@ -76,4 +76,13 @@ public:
         }
     }
 
-    
+    // C - Create: Menambahkan data barang baru
+    void tambahBarang() {
+        Barang b;
+        cout << "\n--- TAMBAH BARANG GUDANG ---\n";
+        cout << "Masukkan ID Barang    : "; cin >> b.id;
+        cin.ignore(); // Membersihkan buffer
+        cout << "Masukkan Nama Barang  : "; getline(cin, b.nama);
+        cout << "Masukkan Harga Barang : "; getline(cin, b.harga);
+
+        vector<Barang> daftarBarang =
