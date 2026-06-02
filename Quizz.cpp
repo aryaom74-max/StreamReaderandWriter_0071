@@ -40,4 +40,29 @@ public:
         }
     }
 
+    // =========================================================================
+    // 3. FITUR MANAJEMEN GUDANG BERBASIS FILE (CRUD)
+    // =========================================================================
+
+    // Fungsi Pembantu: Membaca seluruh file gudang ke dalam bentuk Vector
+    vector<Barang> muatDataGudang() {
+        vector<Barang> daftarBarang;
+        ifstream fileIn(namaFileGudang);
+        
+        if (!fileIn.is_open()) {
+            // Jika file belum ada, buat file baru kosong
+            ofstream fileBaru(namaFileGudang);
+            fileBaru.close();
+            return daftarBarang;
+        }
+
+        Barang b;
+        // Membaca file baris demi baris (Format: ID, Nama, Harga terpisah baris baru)
+        while (getline(fileIn, b.id) && getline(fileIn, b.nama) && getline(fileIn, b.harga)) {
+            daftarBarang.push_back(b);
+        }
+        fileIn.close();
+        return daftarBarang;
+    }
+
     
