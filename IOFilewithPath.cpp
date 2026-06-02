@@ -25,4 +25,16 @@ int main()
 
     // Looping untuk menulis isi file
     while (true) 
-   
+    {
+        cout << "- ";
+        // Mendapatkan setiap karakter dalam satu baris
+        getline(cin, baris);
+
+        // Kondisi jika baris hanya berisi huruf \q
+        if (baris == "\\q") break;
+
+        // Menulis dan memasukkan nilai dari variabel baris ke dalam file
+        outfile << baris << endl;
+    }
+
+    
