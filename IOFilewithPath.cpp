@@ -49,4 +49,19 @@ int main()
 
     // Kondisi jika file ada
     if (infile.is_open()) 
-    
+    {
+        // Perulangan untuk menampilkan setiap baris
+        while (getline(infile, baris)) 
+        {
+            cout << baris << endl;
+        }
+        // Menutup file jika telah selesai di loop
+        infile.close();
+    }
+    // Kondisi jika file tidak ada
+    else {
+        cout << "Unable to open file" << endl;
+    }
+
+    return 0;
+}
