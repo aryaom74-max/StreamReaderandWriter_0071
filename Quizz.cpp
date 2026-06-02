@@ -7,3 +7,10 @@
 
 using namespace std;
 
+// Struktur data untuk Barang Gudang
+struct Barang {
+    string id;
+    string nama;
+    string harga;
+};
+
