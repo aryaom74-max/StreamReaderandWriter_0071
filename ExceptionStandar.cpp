@@ -16,4 +16,13 @@ int main()
         // Memanggil array element ke-5 yang berarti akan terjadi error out of range
         cout << data.at(5) << endl;
     }
-    
+    // Kondisi jika terjadi error didalam try
+    catch (exception& e) 
+    {
+        // Menampilkan pesan error bawaan dari sistem
+        cout << e.what() << endl;
+    }
+
+    cout << "Baris program terakhir" << endl; // penanda 2
+    return 0;
+}
