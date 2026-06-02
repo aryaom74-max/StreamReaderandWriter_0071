@@ -28,4 +28,16 @@ public:
         etalase[2] = "Mesin Cuci Otomatis";
     }
 
+    // 2. Method Public dengan Mekanisme Exception Handling
+    string ambilProdukEtalase(size_t nomorRak) {
+        try {
+            // Wajib menggunakan .at() untuk memicu out_of_range jika indeks tidak valid
+            return etalase.at(nomorRak);
+        }
+        catch (const out_of_range& e) {
+            // Melemparkan kembali (throw) pesan error kustom sesuai nomorRak
+            throw runtime_error("Gagal Mengambil Barang : Rak nomor " + to_string(nomorRak) + " kosong atau tidak tersedia!");
+        }
+    }
+
     
